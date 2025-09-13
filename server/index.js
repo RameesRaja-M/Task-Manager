@@ -9,7 +9,7 @@ const { default: mongoose } = require('mongoose');
 // // Create a Express Instence 
 const app = express();
 app.use(cors({
-    origin:process.env.FRONTEND_URL || 'http://localhost:5173',
+    origin:process.env.FRONTEND_URL,
     methods: 'GET,PUT,POST,DELETE',
     allowedHeaders: 'Content-Type,Authorization',
     credentials: true,
@@ -217,4 +217,5 @@ app.put('/api/tasks/pin/:id', async (req, res) => {
 // Start server
 const PORT = 5000
 app.listen(PORT, () => console.log("Server running on port :"+ PORT)) 
+
 
