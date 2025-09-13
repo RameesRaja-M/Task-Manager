@@ -41,7 +41,7 @@ function Dashboard() {
   const location = useLocation()
 
   // API URL 
- const serverURL = import.meta.env.VITE_SERVER_URL;
+ const serverURL = import.meta.env.VITE_SERVER_URL || "https://task-manager-backend-l668.onrender.com";
 
   // Get Task UseEffect
   useEffect(() => {
@@ -373,3 +373,4 @@ function Dashboard() {
 }
 
 export default Dashboard;
+
