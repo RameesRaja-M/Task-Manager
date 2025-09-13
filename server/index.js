@@ -9,7 +9,7 @@ const { default: mongoose } = require('mongoose');
 // // Create a Express Instence 
 const app = express();
 app.use(cors({
-    origin:process.env.FRONTEND_URL,
+    origin:process.env.FRONTEND_URL || "https://task-manager-frontend-0nt3.onrender.com",
     methods: 'GET,PUT,POST,DELETE',
     allowedHeaders: 'Content-Type,Authorization',
     credentials: true,
@@ -217,5 +217,6 @@ app.put('/api/tasks/pin/:id', async (req, res) => {
 // Start server
 const PORT = 5000
 app.listen(PORT, () => console.log("Server running on port :"+ PORT)) 
+
 
 
